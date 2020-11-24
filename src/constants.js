@@ -98,6 +98,28 @@ export const STATISTIC_DEFINITIONS = {
     options: {key: 'population'},
     hideDelta: true,
   },
+  ppr: {
+    displayName: 'population positivity ratio',
+    color: '#fd7e14',
+    format: '%',
+    options: {
+      key: 'confirmed',
+      normalizeByKey: 'population',
+      multiplyFactor: 100,
+    },
+    hideDelta: true,
+  },
+  ptp: {
+    displayName: 'population tested percentage',
+    color: '#fd7e14',
+    format: '%',
+    options: {
+      key: 'tested',
+      normalizeByKey: 'population',
+      multiplyFactor: 100,
+    },
+    hideDelta: true,
+  },
 };
 
 const definitions = Object.keys(STATISTIC_DEFINITIONS).reduce(
@@ -118,7 +140,7 @@ export const PER_MILLION_OPTIONS = {
   multiplyFactor: 1e6,
 };
 
-export const NAN_STATISTICS = ['tested', 'tpr', 'population'];
+export const NAN_STATISTICS = ['tested', 'tpr', 'population', 'ppr', 'ptp'];
 
 export const PRIMARY_STATISTICS = [
   'confirmed',
